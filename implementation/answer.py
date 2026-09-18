@@ -13,7 +13,10 @@ load_dotenv(override=True)
 MODEL = "gpt-4.1-nano"
 DB_NAME = str(Path(__file__).parent.parent / "vector_db")
 
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_kwargs={"device": "cpu"}
+)
 # embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 RETRIEVAL_K = 10
 
