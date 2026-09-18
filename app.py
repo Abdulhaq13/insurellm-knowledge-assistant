@@ -54,7 +54,7 @@ def main():
             put_message_in_chatbot, inputs=[message, chatbot], outputs=[message, chatbot]
         ).then(chat, inputs=chatbot, outputs=[chatbot, context_markdown])
 
-    ui.launch(inbrowser=True)
+    ui.launch(server_name="0.0.0.0", server_port=7860)
 
 
 if __name__ == "__main__":
